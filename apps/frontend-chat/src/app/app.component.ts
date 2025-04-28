@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule, FormBuilder, FormArray } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 
 @Component({
   imports: [RouterModule, ReactiveFormsModule],
@@ -10,17 +10,8 @@ import { ReactiveFormsModule, FormBuilder, FormArray } from '@angular/forms';
 })
 export class AppComponent {
   title = 'frontend-chat';
-  form!: FormArray;
 
-  constructor(private fb: FormBuilder) {
-    this.form = this.fb.array([
-      {
-        name: this.fb.group({
-          lastName: this.fb.control(''),
-        }),
-      },
-    ]);
+  form: any;
 
-    console.log(this.form);
-  }
+  constructor(private fb: FormBuilder) {}
 }
