@@ -34,7 +34,7 @@ jobs:
 
       - run: npm ci --legacy-peer-deps
 
-      - run: npx nx-cloud start-ci-run
+      # - run: npx nx-cloud start-ci-run
 
       - uses: nrwl/nx-set-shas@v4
 
@@ -44,4 +44,4 @@ jobs:
       - name: lint
         run: npx nx affected -t lint
 
-      - run: npx nx-cloud stop-all-agents
+      # - run: npx nx-cloud stop-all-agents
