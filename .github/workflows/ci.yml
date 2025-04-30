@@ -4,15 +4,14 @@ on:
   pull_request:
     branches:
       - master
-  merge_group:
-    types: [checks_requested]
 
 permissions:
   actions: read
   contents: read
 
 jobs:
-  main:
+  build:
+    name : Test & Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
