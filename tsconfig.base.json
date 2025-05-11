@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@frontend-chat/Shared": ["libs/Shared/src/index.ts"],
+      "@frontend-chat/input": ["libs/types/ui/input/src/index.ts"],
+      "@frontend-chat/textarea": ["libs/types/ui/textarea/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
