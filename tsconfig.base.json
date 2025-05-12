@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@frontend-chat/Shared": ["libs/Shared/src/index.ts"],
+   
       "@frontend-chat/input": ["libs/types/ui/input/src/index.ts"],
       "@frontend-chat/textarea": ["libs/types/ui/textarea/src/index.ts"]
     }

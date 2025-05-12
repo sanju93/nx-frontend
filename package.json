@@ -2,7 +2,9 @@
   "name": "@frontend-chat/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start:nx-frontend" : "npx nx run frontend-chat:serve"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~19.1.0",
