@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
+import {
+  ReactiveFormsModule,
+  FormBuilder,
+  FormGroup,
+  FormControl,
+  Validators,
+} from '@angular/forms';
 
-import { TextareaComponent } from '@frontend-chat/textarea';
+import { InputComponent } from '@design-system';
 import { FormlyFieldConfig, FormlyModule } from '@ngx-formly/core';
+import { FieldSize } from '@design-system';
 
 @Component({
-  imports: [RouterModule, FormlyModule, ReactiveFormsModule, TextareaComponent],
+  imports: [RouterModule, FormlyModule, ReactiveFormsModule, InputComponent],
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
@@ -15,7 +22,11 @@ import { FormlyFieldConfig, FormlyModule } from '@ngx-formly/core';
 export class AppComponent {
   title = 'frontend-chat';
 
-  form = new FormGroup({});
+  size = FieldSize;
+
+  form = new FormGroup({
+    name: new FormControl(null, [Validators.required]),
+  });
   model = { name: 'sanjay' };
   fields: FormlyFieldConfig[] = [
     {

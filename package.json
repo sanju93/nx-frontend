@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start:nx-frontend": "npx nx run frontend-chat:serve",
-    "affected:lint" : "npx nx run-many --target=lint"
+    "affected:lint": "npx nx run-many --target=lint"
   },
   "private": true,
   "dependencies": {
@@ -31,7 +31,7 @@
     "@angular/compiler-cli": "~19.1.0",
     "@angular/language-service": "~19.1.0",
     "@eslint/js": "^9.8.0",
-    "@nx/angular": "20.4.6",
+    "@nx/angular": "^20.4.6",
     "@nx/eslint": "20.4.6",
     "@nx/eslint-plugin": "20.4.6",
     "@nx/jest": "20.4.6",

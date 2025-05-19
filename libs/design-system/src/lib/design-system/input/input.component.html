@@ -1,0 +1,14 @@
+<form-field>
+  <mat-form-field class="form-field--size-{{ size() }}">
+    <mat-label>Name</mat-label>
+    <input
+      [type]="type()"
+      [required]="required()"
+      [placeholder]="placeholder()"
+      [(ngModel)]="value"
+      (ngModelChange)="handleModelChange($event)"
+      matInput
+    />
+    <mat-error>mat-error</mat-error>
+  </mat-form-field>
+</form-field>

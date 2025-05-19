@@ -15,9 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-   
-      "@frontend-chat/input": ["libs/types/ui/input/src/index.ts"],
-      "@frontend-chat/textarea": ["libs/types/ui/textarea/src/index.ts"]
+      "@design-system": ["libs/design-system/src/index.ts"],
+      "@frontend-chat/design-system": ["libs/src/index.ts"],
+      "@frontend-chat/libs/feature": ["libs/feature/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
