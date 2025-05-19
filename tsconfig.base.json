@@ -17,7 +17,8 @@
     "paths": {
       "@design-system": ["libs/design-system/src/index.ts"],
       "@frontend-chat/design-system": ["libs/src/index.ts"],
-      "@frontend-chat/libs/feature": ["libs/feature/src/index.ts"]
+      "@frontend-chat/libs/feature": ["libs/feature/src/index.ts"],
+      "@frontend-chat/libs/shared": ["libs/shared/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
