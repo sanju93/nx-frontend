@@ -1,9 +1,10 @@
+@use './colors' as color;
+
 html,
 body {
   margin: 0;
   font-family: 'Times New Roman', Times, serif;
-  color: #43525a;
-  height: 100vh;
+  color: color.$color;
   width: 100vw;
   box-sizing: border-box;
 }

@@ -5,6 +5,6 @@ export const appRoutes: Route[] = [
     path: '',
     pathMatch: 'prefix',
     loadChildren: () =>
-      import('@frontend-chat/libs/feature').then((m) => m.routes),
+      import('@frontend-chat/libs/auth').then((m) => m.routes),
   },
 ];
