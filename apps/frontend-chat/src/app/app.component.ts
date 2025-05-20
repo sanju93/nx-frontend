@@ -11,9 +11,11 @@ import {
 import { InputComponent } from '@design-system';
 import { FormlyFieldConfig, FormlyModule } from '@ngx-formly/core';
 import { FieldSize } from '@design-system';
+import { DOCUMENT } from '@angular/common';
+import { inject } from '@angular/core';
 
 @Component({
-  imports: [RouterModule, FormlyModule, ReactiveFormsModule, InputComponent],
+  imports: [RouterModule, FormlyModule, ReactiveFormsModule],
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
@@ -23,6 +25,8 @@ export class AppComponent {
   title = 'frontend-chat';
 
   size = FieldSize;
+
+  document = inject(DOCUMENT);
 
   form = new FormGroup({
     name: new FormControl(null, [Validators.required]),
@@ -41,6 +45,10 @@ export class AppComponent {
   ];
 
   constructor(private fb: FormBuilder) {}
+
+  ngAfterViewInit() {
+    this.document.body.classList.add('dark-mode');
+  }
 
   onSubmit() {
     console.log(this.form.controls);
