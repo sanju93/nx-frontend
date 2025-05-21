@@ -1,0 +1,19 @@
+.form-field--size {
+  height: auto;
+
+  &-small {
+    width: 25%;
+  }
+
+  &-mid {
+    width: 50%;
+  }
+
+  &-full {
+    width: 100%;
+  }
+
+  .input {
+    color: white;
+  }
+}

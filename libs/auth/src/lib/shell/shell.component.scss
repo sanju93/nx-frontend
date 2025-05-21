@@ -4,13 +4,18 @@
   display: flex;
   flex-direction: row;
 
-  &__left-section {
+  .__left-section {
     height: 100%;
     width: 50%;
   }
 
-  &__right-section {
+  .__right-section {
     height: 100%;
     width: 50%;
+
+    .image {
+      height: 99%;
+      width: 100%;
+    }
   }
 }

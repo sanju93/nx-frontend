@@ -23,6 +23,10 @@ export class MatControlValueAccessor<T> implements ControlValueAccessor {
     alias: 'hidden',
   });
 
+  label = input<string>('', {
+    alias: 'label',
+  });
+
   protected _value!: T;
 
   protected onChange = (value: T) => {};
