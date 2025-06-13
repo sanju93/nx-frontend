@@ -1,15 +1,18 @@
-<form-field>
-  <mat-form-field class="form-field--size-{{ size() }}">
-    <mat-label>{{ label() }}</mat-label>
-    <input
-      class="input"
-      [type]="type()"
-      [required]="required()"
-      [placeholder]="placeholder()"
-      [(ngModel)]="value"
-      (ngModelChange)="handleModelChange($event)"
-      matInput
-    />
-    <mat-error>mat-error</mat-error>
-  </mat-form-field>
+<form-field
+  [isDisabled]="isDisabled()"
+  [label]="label()"
+  [isRequired]="isRequired()"
+  [isReadonly]="isReadonly()"
+  [customFormControl]="FormControl"
+>
+  <input
+    class="input"
+    [id]="id"
+    [type]="type()"
+    [required]="isRequired()"
+    [formControl]="FormControl"
+    [placeholder]="placeholder()"
+    [readOnly]="isReadonly()"
+    (input)="handleModelChange($event)"
+  />
 </form-field>

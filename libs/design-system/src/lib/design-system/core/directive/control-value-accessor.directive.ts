@@ -1,22 +1,20 @@
-import { Directive, input, Input, model, Optional, Self } from '@angular/core';
-import { ControlValueAccessor, NgControl } from '@angular/forms';
+import { Directive, input, model, Optional, Self } from '@angular/core';
+import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
 @Directive({
   selector: 'mat-control-value-accessor',
 })
 export class MatControlValueAccessor<T> implements ControlValueAccessor {
-  @Input() set value(value: T) {
-    this._value = value;
-  }
-  required = input<boolean>(false, {
-    alias: 'required',
+  value = model<T>();
+  isRequired = input<boolean>(false, {
+    alias: 'isRequired',
   });
 
-  readonly = input<boolean>(false, {
-    alias: 'readonly',
+  isReadonly = input<boolean>(false, {
+    alias: 'isReadonly',
   });
 
-  disabled = model<boolean>(false, {
-    alias: 'disabled',
+  isDisabled = model<boolean>(false, {
+    alias: 'isDisabled',
   });
 
   hidden = input<boolean>(false, {
@@ -27,21 +25,17 @@ export class MatControlValueAccessor<T> implements ControlValueAccessor {
     alias: 'label',
   });
 
-  protected _value!: T;
+  FormControl = new FormControl();
 
   protected onChange = (value: T) => {};
   protected onTouched = () => {};
 
-  get value(): T {
-    return this._value;
-  }
-
   constructor(@Self() @Optional() ngControl: NgControl) {
-    if (ngControl) ngControl.valueAccessor = this;
+    if (ngControl !== null) ngControl.valueAccessor = this;
   }
 
   writeValue(obj: any): void {
-    this.value = obj;
+    this.value.set(obj);
   }
   registerOnChange(fn: any): void {
     this.onChange = fn;
@@ -49,7 +43,12 @@ export class MatControlValueAccessor<T> implements ControlValueAccessor {
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }
-  setDisabledState?(isDisabled: boolean): void {
-    this.disabled.set(isDisabled);
+  setDisabledState(isDisabled: boolean): void {
+    if (isDisabled) {
+      this.FormControl.disable();
+    } else {
+      this.FormControl.disabled && this.FormControl.enable();
+    }
+    this.isDisabled.set(isDisabled);
   }
 }

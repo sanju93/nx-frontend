@@ -7,7 +7,13 @@ import {
   Self,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, NgControl } from '@angular/forms';
+import {
+  FormControl,
+  FormsModule,
+  NgControl,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {
   MatFormFieldControl,
@@ -16,21 +22,25 @@ import {
 import { MatControlValueAccessor } from '../core/directive/control-value-accessor.directive';
 import { FormFieldComponent } from '../form-field/form-field.component';
 import { FieldSize } from '../core/models/field-size';
-
+let fieldId = 0;
 @Component({
   selector: 'mat-input',
-  imports: [CommonModule, FormsModule, MatInputModule, FormFieldComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    FormFieldComponent,
+  ],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    {
-      provide: MatFormFieldControl,
-      useExisting: InputComponent,
-    },
-  ],
+  host: {
+    '[hidden]': 'hidden()',
+  },
 })
 export class InputComponent extends MatControlValueAccessor<string | number> {
+  id = `mat-input-field-${fieldId++}`;
   placeholder = input<string>('', {
     alias: 'placeholder',
   });
@@ -49,8 +59,29 @@ export class InputComponent extends MatControlValueAccessor<string | number> {
     super(ngControl);
   }
 
-  handleModelChange(value: string | number) {
-    this.onChange(value);
+  ngAfterViewInit(): void {
+    if (this.isRequired()) {
+      this.ApplyRequiredValidation();
+    }
+
+    if (this.type() === 'email') {
+      this.ApplyEmailValidation();
+    }
+  }
+
+  ApplyRequiredValidation() {
+    this.FormControl.addValidators([Validators.required]);
+  }
+
+  ApplyEmailValidation() {
+    this.FormControl.addValidators([Validators.email]);
+  }
+
+  handleModelChange(value: Event) {
+    const _valueTarget = value.target as HTMLInputElement;
+    this.onChange(_valueTarget.value);
+    this.value.set(_valueTarget.value);
+
     this.onTouched();
     this.cdr.markForCheck();
   }

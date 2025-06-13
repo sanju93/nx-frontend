@@ -1,18 +1,22 @@
 <section class="login-container">
   <h2 class="">Get Started Now</h2>
 
-  <form class="form__container">
+  <form [formGroup]="form" class="form__container">
     <mat-input
       type="text"
       [size]="size.MID"
       label="Name"
-      [required]="true"
+      formControlName="name"
+      label="Name"
+      [isRequired]="true"
     ></mat-input>
     <mat-input
       type="email"
+      formControlName="email"
+      label="Email"
       [size]="size.MID"
       label="Email"
-      [required]="true"
+      [isRequired]="true"
     ></mat-input>
   </form>
 </section>
