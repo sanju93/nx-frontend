@@ -1,0 +1,22 @@
+<section class="login-container">
+  <h2 class="">Get Started Now</h2>
+
+  <form [formGroup]="form" class="form__container">
+    <mat-input
+      type="text"
+      [size]="size.MID"
+      label="Name"
+      formControlName="name"
+      label="Name"
+      [isRequired]="true"
+    ></mat-input>
+    <mat-input
+      type="email"
+      formControlName="email"
+      label="Email"
+      [size]="size.MID"
+      label="Email"
+      [isRequired]="true"
+    ></mat-input>
+  </form>
+</section>

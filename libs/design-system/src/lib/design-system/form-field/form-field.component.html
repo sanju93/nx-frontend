@@ -1,0 +1,9 @@
+<div class="container">
+  <div>
+    <span [textContent]="label()"></span>
+    <span *ngIf="isAstriskVisible" class="astrisk">&nbsp;*</span>
+  </div>
+  <div class="field-area">
+    <ng-content></ng-content>
+  </div>
+</div>

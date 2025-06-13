@@ -1,0 +1,18 @@
+<form-field
+  [isDisabled]="isDisabled()"
+  [label]="label()"
+  [isRequired]="isRequired()"
+  [isReadonly]="isReadonly()"
+  [customFormControl]="FormControl"
+>
+  <input
+    class="input"
+    [id]="id"
+    [type]="type()"
+    [required]="isRequired()"
+    [formControl]="FormControl"
+    [placeholder]="placeholder()"
+    [readOnly]="isReadonly()"
+    (input)="handleModelChange($event)"
+  />
+</form-field>
