@@ -1,0 +1,13 @@
+<div class="container">
+  <div>
+    <span [textContent]="label()"></span>
+    <span *ngIf="isAstriskVisible" class="astrisk">&nbsp;*</span>
+  </div>
+  <div class="field-area">
+    <ng-content></ng-content>
+  </div>
+
+  <mat-form-field-error-control
+    [errorFormControl]="NgControl.control"
+  ></mat-form-field-error-control>
+</div>
