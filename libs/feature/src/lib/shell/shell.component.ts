@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppShellComponent } from '@frontend-chat/libs/shared';
-import { RouterModule, RouterOutlet } from '@angular/router';
-import { routes } from './Routes/shell-routes';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'feature-shell-component',

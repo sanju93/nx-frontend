@@ -39,6 +39,7 @@ export default [
     // Override or add rules here
     rules: {
       '@typescript-eslint/no-unused-vars': 'error',
+      '@typescript-eslint/no-empty-function':'warn'
     },
   },
 ];

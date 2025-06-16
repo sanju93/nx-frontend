@@ -1,4 +1,5 @@
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
@@ -15,7 +16,7 @@ import {
 } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 
-import { MatControlValueAccessor } from '../core/directive/control-value-accessor.directive';
+import { MatControlValueAccessorDirective } from '../core/directive/control-value-accessor.directive';
 import { FormFieldComponent } from '../form-field/form-field.component';
 import { FieldSize } from '../core/models/field-size';
 let fieldId = 0;
@@ -35,18 +36,15 @@ let fieldId = 0;
     '[hidden]': 'hidden()',
   },
 })
-export class InputComponent extends MatControlValueAccessor<string | number> {
+export class InputComponent
+  extends MatControlValueAccessorDirective<string | number>
+  implements AfterViewInit
+{
   id = `mat-input-field-${fieldId++}`;
-  placeholder = input<string>('', {
-    alias: 'placeholder',
-  });
-  type = input<string>('text', {
-    alias: 'type',
-  });
+  placeholder = input<string>('');
+  type = input<string>('text');
 
-  size = input<FieldSize>(FieldSize.MID, {
-    alias: 'size',
-  });
+  size = input<FieldSize>(FieldSize.MID);
 
   constructor(
     @Self() @Optional() public ngControl: NgControl,

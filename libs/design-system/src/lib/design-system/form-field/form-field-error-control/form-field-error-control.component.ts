@@ -4,6 +4,8 @@ import {
   Component,
   Inject,
   input,
+  OnDestroy,
+  OnInit,
 } from '@angular/core';
 import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { CUSTOM_ERRORS, errors } from './custom-errors/custom-errors';
@@ -23,7 +25,7 @@ import { FormFieldErrorMessageComponent } from '../form-field-error-message/form
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FormFieldErrorControlComponent {
+export class FormFieldErrorControlComponent implements OnInit, OnDestroy {
   errorMessagesMap = input<Record<string, any>>();
   errorFormControl = input<AbstractControl | null>();
   private _errorFormControl!: AbstractControl | null;

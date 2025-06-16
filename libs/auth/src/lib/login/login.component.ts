@@ -23,8 +23,4 @@ export class AuthLoginComponent {
 
     email: new FormControl('', [Validators.email, Validators.required]),
   });
-
-  constructor() {}
-
-  ngAfterViewInit() {}
 }

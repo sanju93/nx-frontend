@@ -1,33 +1,25 @@
 import { Directive, input, model, Optional, Self } from '@angular/core';
 import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
 @Directive({
-  selector: 'mat-control-value-accessor',
+  selector: 'controlValueAcessorDirective',
 })
-export class MatControlValueAccessor<T> implements ControlValueAccessor {
+export class MatControlValueAccessorDirective<T>
+  implements ControlValueAccessor
+{
   value = model<T>();
-  isRequired = input<boolean>(false, {
-    alias: 'isRequired',
-  });
+  isRequired = input<boolean>(false);
 
-  isReadonly = input<boolean>(false, {
-    alias: 'isReadonly',
-  });
+  isReadonly = input<boolean>(false);
 
-  isDisabled = model<boolean>(false, {
-    alias: 'isDisabled',
-  });
+  isDisabled = model<boolean>(false);
 
-  hidden = input<boolean>(false, {
-    alias: 'hidden',
-  });
+  hidden = input<boolean>(false);
 
-  label = input<string>('', {
-    alias: 'label',
-  });
+  label = input<string>('');
 
   FormControl = new FormControl();
 
-  protected onChange = (value: T) => {};
+  protected onChange: (args?: T) => void = () => undefined;
   protected onTouched = () => {};
 
   constructor(@Self() @Optional() ngControl: NgControl) {
@@ -47,7 +39,7 @@ export class MatControlValueAccessor<T> implements ControlValueAccessor {
     if (isDisabled) {
       this.FormControl.disable();
     } else {
-      this.FormControl.disabled && this.FormControl.enable();
+      if (this.FormControl.disabled) this.FormControl.enable();
     }
     this.isDisabled.set(isDisabled);
   }
