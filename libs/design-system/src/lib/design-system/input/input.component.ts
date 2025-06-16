@@ -8,17 +8,13 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  FormControl,
   FormsModule,
   NgControl,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import {
-  MatFormFieldControl,
-  MatFormFieldModule,
-} from '@angular/material/form-field';
+
 import { MatControlValueAccessor } from '../core/directive/control-value-accessor.directive';
 import { FormFieldComponent } from '../form-field/form-field.component';
 import { FieldSize } from '../core/models/field-size';

@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import {
-  ReactiveFormsModule,
-  FormBuilder,
-  FormGroup,
-  FormControl,
-  Validators,
-} from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 
 import { FormlyFieldConfig, FormlyModule } from '@ngx-formly/core';
 import { FieldSize } from '@design-system';

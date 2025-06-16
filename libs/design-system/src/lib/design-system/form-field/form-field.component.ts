@@ -1,4 +1,10 @@
-import { Component, input, Injector, Inject } from '@angular/core';
+import {
+  Component,
+  input,
+  Injector,
+  Inject,
+  AfterViewInit,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -12,22 +18,14 @@ import { NgControl } from '@angular/forms';
   templateUrl: './form-field.component.html',
   styleUrl: './form-field.component.scss',
 })
-export class FormFieldComponent {
-  label = input<string>('', {
-    alias: 'label',
-  });
+export class FormFieldComponent implements AfterViewInit {
+  label = input<string>('');
 
-  isRequired = input<boolean>(false, {
-    alias: 'isRequired',
-  });
+  isRequired = input<boolean>(false);
 
-  isDisabled = input<boolean>(false, {
-    alias: 'isDisabled',
-  });
+  isDisabled = input<boolean>(false);
 
-  isReadonly = input<boolean>(false, {
-    alias: 'isReadonly',
-  });
+  isReadonly = input<boolean>(false);
 
   customFormControl = input<FormControl>();
 
