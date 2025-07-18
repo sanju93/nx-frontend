@@ -1,4 +1,4 @@
-import { Directive, input, model, Optional, Self } from '@angular/core';
+import { Directive, inject, input, model, Optional, Self } from '@angular/core';
 import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
 @Directive({
   selector: 'controlValueAcessorDirective',
@@ -17,7 +17,9 @@ export class MatControlValueAccessorDirective<T>
 
   label = input<string>('');
 
-  FormControl = new FormControl();
+  ngControl = inject(NgControl);
+
+  formControl = new FormControl();
 
   protected onChange: (args?: T) => void = () => undefined;
   protected onTouched = () => {};
@@ -37,9 +39,9 @@ export class MatControlValueAccessorDirective<T>
   }
   setDisabledState(isDisabled: boolean): void {
     if (isDisabled) {
-      this.FormControl.disable();
+      this.formControl.disable();
     } else {
-      if (this.FormControl.disabled) this.FormControl.enable();
+      if (this.formControl.disabled) this.formControl.enable();
     }
     this.isDisabled.set(isDisabled);
   }

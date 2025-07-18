@@ -73,7 +73,6 @@ export class FormFieldErrorControlComponent implements OnInit, OnDestroy {
         this.errorMessages = [
           errorMap ? errorMap(controlErrors[firstKey]) : 'Unexpected Error',
         ];
-        console.log(this.errorMessages);
       } else {
         this.errorMessages = [];
       }

@@ -3,14 +3,14 @@
   [label]="label()"
   [isRequired]="isRequired()"
   [isReadonly]="isReadonly()"
-  [customFormControl]="FormControl"
+  [customFormControl]="formControl"
 >
   <input
     class="input"
     [id]="id"
     [type]="type()"
     [required]="isRequired()"
-    [formControl]="FormControl"
+    [formControl]="formControl"
     [placeholder]="placeholder()"
     [readOnly]="isReadonly()"
     (input)="handleModelChange($event)"

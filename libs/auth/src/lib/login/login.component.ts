@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { InputComponent, FieldSize } from '@design-system';
+import {
+  InputComponent,
+  FieldSize,
+  MatTextAreaComponent,
+} from '@design-system';
 import {
   FormControl,
   FormGroup,
@@ -10,7 +14,12 @@ import {
 
 @Component({
   selector: 'auth-login',
-  imports: [CommonModule, InputComponent, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    InputComponent,
+    ReactiveFormsModule,
+    MatTextAreaComponent,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })

@@ -64,11 +64,11 @@ export class InputComponent
   }
 
   ApplyRequiredValidation() {
-    this.FormControl.addValidators([Validators.required]);
+    this.formControl.addValidators([Validators.required]);
   }
 
   ApplyEmailValidation() {
-    this.FormControl.addValidators([Validators.email]);
+    this.formControl.addValidators([Validators.email]);
   }
 
   handleModelChange(value: Event) {

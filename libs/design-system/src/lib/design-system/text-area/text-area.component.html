@@ -1,0 +1,20 @@
+<p>text-area works!</p>
+
+<form-field
+  [isDisabled]="isDisabled()"
+  [isReadonly]="isReadonly()"
+  [label]="label()"
+  [isRequired]="isRequired()"
+>
+  <textarea
+    [id]="id"
+    [formControl]="formControl"
+    [required]="isRequired()"
+    [readonly]="isReadonly()"
+    cdkTextareaAutosize
+    #autosize="cdkTextareaAutosize"
+    cdkAutosizeMinRows="1"
+    cdkAutosizeMaxRows="5"
+    (input)="handleOnModelChange($event)"
+  ></textarea>
+</form-field>
