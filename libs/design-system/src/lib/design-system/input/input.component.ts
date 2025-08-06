@@ -47,7 +47,7 @@ export class InputComponent
   size = input<FieldSize>(FieldSize.MID);
 
   constructor(
-    @Self() @Optional() public ngControl: NgControl,
+    @Self() @Optional() ngControl: NgControl,
     private cdr: ChangeDetectorRef
   ) {
     super(ngControl);

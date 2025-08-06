@@ -14,12 +14,7 @@ import {
 
 @Component({
   selector: 'auth-login',
-  imports: [
-    CommonModule,
-    InputComponent,
-    ReactiveFormsModule,
-    MatTextAreaComponent,
-  ],
+  imports: [CommonModule, InputComponent, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
