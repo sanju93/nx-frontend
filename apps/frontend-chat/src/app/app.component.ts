@@ -35,4 +35,12 @@ export class AppComponent {
   ];
 
   constructor(private fb: FormBuilder) {}
+
+  handleClick() {
+    if (this.document.documentElement.getAttributeNode('dark-theme')) {
+      this.document.documentElement.removeAttribute('dark-theme');
+    } else {
+      this.document.documentElement.setAttribute('dark-theme', '');
+    }
+  }
 }

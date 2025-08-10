@@ -1,9 +1,11 @@
 @use './colors' as color;
+@use './theme';
 
 @use '@angular/material' as mat;
 
 html {
-  color-scheme: dark;
+  color-scheme: light;
+
   @include mat.theme(
     (
       color: mat.$violet-palette,
@@ -11,6 +13,10 @@ html {
       density: 0,
     )
   );
+}
+
+html[dark-theme] {
+  color-scheme: dark;
 }
 
 // body {
