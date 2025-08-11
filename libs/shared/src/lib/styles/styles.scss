@@ -1,7 +1,16 @@
 @use './colors' as color;
-@use './theme';
+
+@use './theme' as *;
 
 @use '@angular/material' as mat;
+
+$app-config: (
+  form-field: (
+    form-field-label-size: 14px,
+  ),
+);
+
+@include nx-frontend-theme($app-config);
 
 html {
   color-scheme: light;

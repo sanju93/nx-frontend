@@ -1,0 +1,9 @@
+@mixin form-field-theme($config) {
+  @if $config {
+    $form-field-label-size: map-get($config, form-field-label-size);
+
+    :root {
+      --form-field-label-size: #{$form-field-label-size};
+    }
+  }
+}
