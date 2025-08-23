@@ -14,7 +14,12 @@ import {
 
 @Component({
   selector: 'auth-login',
-  imports: [CommonModule, InputComponent, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    InputComponent,
+    ReactiveFormsModule,
+    MatTextAreaComponent,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
@@ -24,7 +29,7 @@ export class AuthLoginComponent {
     name: new FormControl({ value: '', disabled: false }, [
       Validators.required,
     ]),
-
     email: new FormControl('', [Validators.email, Validators.required]),
+    textarea: new FormControl(''),
   });
 }
