@@ -1,6 +1,6 @@
 <div class="container">
   <div>
-    <span [textContent]="label()"></span>
+    <span class="__field-label" [textContent]="label()"></span>
     <span *ngIf="isAstriskVisible" [class.astrisk]="isRequired()">&nbsp;*</span>
   </div>
   <div class="field-area">
