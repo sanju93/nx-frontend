@@ -6,6 +6,7 @@ import { InputComponent } from '@design-system';
 @Component({
   selector: 'dynamic-forms-generator',
   templateUrl: './dynamic-forms-core.component.html',
+  imports: [FormlyModule],
   providers: [],
 })
 export class DynamicFormsGeneratorComponent {

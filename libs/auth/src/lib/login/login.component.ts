@@ -11,25 +11,36 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { FormlyFieldConfig } from '@ngx-formly/core';
+import { DynamicFormsGeneratorComponent } from '@frontend-chat/dynamic-forms';
 
 @Component({
   selector: 'auth-login',
-  imports: [
-    CommonModule,
-    InputComponent,
-    ReactiveFormsModule,
-    MatTextAreaComponent,
-  ],
+  imports: [CommonModule, ReactiveFormsModule, DynamicFormsGeneratorComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
 export class AuthLoginComponent {
   size = FieldSize;
-  form = new FormGroup({
-    name: new FormControl({ value: '', disabled: false }, [
-      Validators.required,
-    ]),
-    email: new FormControl('', [Validators.email, Validators.required]),
-    textarea: new FormControl(''),
-  });
+  form = new FormGroup({});
+
+  fields: FormlyFieldConfig[] = [
+    {
+      key: 'name',
+      type: 'input',
+      props: {
+        label: 'dyanmic input',
+        required: true,
+      },
+    },
+  ];
+  model = {
+    name: 'hello',
+  };
+
+  constructor() {
+    this.form.valueChanges.subscribe((data) => {
+      console.log(data);
+    });
+  }
 }

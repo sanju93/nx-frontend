@@ -29,6 +29,7 @@ export class MatControlValueAccessorDirective<T>
   }
 
   writeValue(obj: any): void {
+    this.formControl.setValue(obj);
     this.value.set(obj);
   }
   registerOnChange(fn: any): void {

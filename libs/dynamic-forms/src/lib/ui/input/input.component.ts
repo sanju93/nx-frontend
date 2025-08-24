@@ -1,7 +1,15 @@
 import { Component } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import {
+  AbstractControl,
+  FormControl,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { InputComponent } from '@design-system';
-import { FieldType, FormlyFieldConfig } from '@ngx-formly/core';
+import {
+  FieldType,
+  FieldTypeConfig,
+  FormlyFieldConfig,
+} from '@ngx-formly/core';
 
 @Component({
   imports: [InputComponent, ReactiveFormsModule],
@@ -10,7 +18,8 @@ import { FieldType, FormlyFieldConfig } from '@ngx-formly/core';
     <mat-input
       [formControl]="formControl"
       [label]="props.label ?? ''"
+      [isRequired]="props.required ?? false"
     ></mat-input>
   `,
 })
-export class DynamicFormInputComponent extends FieldType<FormlyFieldConfig> {}
+export class DynamicFormInputComponent extends FieldType<FieldTypeConfig> {}

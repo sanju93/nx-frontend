@@ -1,7 +1,7 @@
 <section class="login-container">
   <h2 class="">Get Started Now</h2>
 
-  <form [formGroup]="form" class="form__container">
+  <!-- <form [formGroup]="form" class="form__container">
     <mat-input
       type="text"
       [size]="size.MID"
@@ -20,5 +20,7 @@
     ></mat-input>
 
     <mat-text-area label="textarea" formControlName="textarea"> </mat-text-area>
-  </form>
+  </form> -->
+  <dynamic-forms-generator [fields]="fields" [form]="form" [model]="model">
+  </dynamic-forms-generator>
 </section>

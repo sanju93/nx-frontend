@@ -10,6 +10,7 @@ import { FormlyMaterialModule } from '@ngx-formly/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
+import { DynamicFormInputComponent } from '@frontend-chat/dynamic-forms';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,8 +19,14 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     importProvidersFrom(
       BrowserAnimationsModule,
-      FormlyModule.forRoot(),
-      FormlyMaterialModule
+      FormlyModule.forRoot({
+        types: [
+          {
+            name: 'input',
+            component: DynamicFormInputComponent,
+          },
+        ],
+      })
     ),
     provideRouter(appRoutes),
   ],

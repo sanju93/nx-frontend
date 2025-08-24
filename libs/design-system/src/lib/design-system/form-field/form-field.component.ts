@@ -14,7 +14,7 @@ import { NgControl } from '@angular/forms';
 
 @Component({
   selector: 'form-field',
-  imports: [CommonModule, MatFormFieldModule, FormFieldErrorControlComponent],
+  imports: [CommonModule, FormFieldErrorControlComponent],
   templateUrl: './form-field.component.html',
   styleUrl: './form-field.component.scss',
 })
