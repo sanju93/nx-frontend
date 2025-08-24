@@ -16,7 +16,11 @@
     "baseUrl": ".",
     "paths": {
       "@design-system": ["libs/design-system/src/index.ts"],
+      "@dirty-check": [
+        "libs/design-system/src/lib/design-system/dirty-check/src/index.ts"
+      ],
       "@frontend-chat/design-system": ["libs/src/index.ts"],
+      "@frontend-chat/dynamic-forms": ["libs/dynamic-forms/src/index.ts"],
       "@frontend-chat/libs/auth": ["libs/auth/src/index.ts"],
       "@frontend-chat/libs/feature": ["libs/feature/src/index.ts"],
       "@frontend-chat/libs/shared": ["libs/shared/src/index.ts"]
