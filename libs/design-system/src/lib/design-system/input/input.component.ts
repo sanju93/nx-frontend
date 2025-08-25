@@ -7,7 +7,7 @@ import {
   Optional,
   Self,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import {
   FormsModule,
   NgControl,
@@ -23,12 +23,11 @@ let fieldId = 0;
 @Component({
   selector: 'mat-input',
   imports: [
-    CommonModule,
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
-    FormFieldComponent,
-  ],
+    FormFieldComponent
+],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'mat-form-field-error-message',
-  imports: [CommonModule],
+  imports: [],
   template: `
     @for (error of errorMessages(); track $index) {
     <p class="error-message">{{ error }}</p>

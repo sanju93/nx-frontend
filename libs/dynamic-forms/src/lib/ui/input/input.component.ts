@@ -5,11 +5,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { InputComponent } from '@design-system';
-import {
-  FieldType,
-  FieldTypeConfig,
-  FormlyFieldConfig,
-} from '@ngx-formly/core';
+import { FieldType, FieldTypeConfig } from '@ngx-formly/core';
 
 @Component({
   imports: [InputComponent, ReactiveFormsModule],

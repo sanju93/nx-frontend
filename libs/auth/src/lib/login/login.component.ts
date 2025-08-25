@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import {
   InputComponent,
   FieldSize,
@@ -16,7 +16,7 @@ import { DynamicFormsGeneratorComponent } from '@frontend-chat/dynamic-forms';
 
 @Component({
   selector: 'auth-login',
-  imports: [CommonModule, ReactiveFormsModule, DynamicFormsGeneratorComponent],
+  imports: [ReactiveFormsModule, DynamicFormsGeneratorComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })

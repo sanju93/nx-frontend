@@ -7,7 +7,7 @@ import {
   ChangeDetectorRef,
   AfterViewInit,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { MatControlValueAccessorDirective } from '../core/directive/control-value-accessor.directive';
 import { ReactiveFormsModule, Validators } from '@angular/forms';
 import { CdkTextareaAutosize, TextFieldModule } from '@angular/cdk/text-field';
@@ -19,12 +19,11 @@ let fieldId = 0;
 @Component({
   selector: 'mat-text-area',
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     TextFieldModule,
     MatInputModule,
-    FormFieldComponent,
-  ],
+    FormFieldComponent
+],
   templateUrl: './text-area.component.html',
   styleUrl: './text-area.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

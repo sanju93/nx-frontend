@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, DOCUMENT } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 
 import { FormlyFieldConfig, FormlyModule } from '@ngx-formly/core';
 import { FieldSize } from '@design-system';
-import { DOCUMENT } from '@angular/common';
+
 import { inject } from '@angular/core';
 
 @Component({

@@ -5,7 +5,7 @@ import {
   Inject,
   AfterViewInit,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormControl } from '@angular/forms';
@@ -14,7 +14,7 @@ import { NgControl } from '@angular/forms';
 
 @Component({
   selector: 'form-field',
-  imports: [CommonModule, FormFieldErrorControlComponent],
+  imports: [FormFieldErrorControlComponent],
   templateUrl: './form-field.component.html',
   styleUrl: './form-field.component.scss',
 })
