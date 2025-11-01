@@ -1,0 +1,4 @@
+FROM node:alpine:latest
+WORKDIR /var/www
+
+RUN npm install -g pm2
