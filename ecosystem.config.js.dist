@@ -1,0 +1,8 @@
+module.exports = {
+    apps : [{
+        name : "nx-frontend",
+        script : "npx",
+        args : "nx run frontend-chat:serve --host=0.0.0.0 --inspect=false",
+        watch : false
+    }]
+}
