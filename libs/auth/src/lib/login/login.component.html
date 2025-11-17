@@ -19,8 +19,11 @@
       [isRequired]="true"
     ></mat-input>
 
-    <mat-text-area label="textarea" formControlName="textarea"> </mat-text-area>
   </form> -->
-  <dynamic-forms-generator [fields]="fields" [form]="form" [model]="model">
-  </dynamic-forms-generator>
+  <form [formGroup]="form" (submit)="handleSubmit($event)">
+    <dynamic-forms-generator [fields]="fields" [form]="form" [model]="model">
+    </dynamic-forms-generator>
+    <button type="submit">Login</button>
+  </form>
+  <button (click)="handleNotes()">Get Notes</button>
 </section>

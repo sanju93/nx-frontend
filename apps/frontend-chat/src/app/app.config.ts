@@ -3,6 +3,7 @@ import {
   importProvidersFrom,
   provideZoneChangeDetection,
 } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { FormlyModule } from '@ngx-formly/core';
@@ -17,6 +18,7 @@ export const appConfig: ApplicationConfig = {
     provideStore(),
     provideEffects(),
     provideZoneChangeDetection({ eventCoalescing: true }),
+    provideHttpClient(),
     importProvidersFrom(
       BrowserAnimationsModule,
       FormlyModule.forRoot({
